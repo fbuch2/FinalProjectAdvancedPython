@@ -7,5 +7,8 @@ test:
 unittest:
 	python -m unittest
 
+flake8:
+	flake8 *
+
 lint:
-	pylint scripts
+	pylint *
