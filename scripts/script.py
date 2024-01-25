@@ -1,11 +1,14 @@
+import sys
+import pandas as pd
+import click
+
+sys.path.append("scripts")
+from cleaning_dataset import CleaningDataset
+
+
 """
 Script to get a dataset, and clean it and be able to do data analysis on it.
 """
-import pandas as pd
-import click
-import sys
-sys.path.append("scripts")
-from cleaning_dataset import CleaningDataset
 
 
 def input_dataset(file):
