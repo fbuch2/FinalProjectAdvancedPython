@@ -170,6 +170,7 @@ Maserati GranCabrio,2,Diesel,4691,8,4.0,Automatic,75.0,Convertible,4.0,15900000,
 Mercedes-Benz AMG GLE 53,1,Petrol,2999,6,5.0,Automatic,85.0,Coupe,4.5,30000000,35000000,520.0,5800,435.0,6100
 Aston Martin Vantage,3,Petrol,3998,8,2.0,Manual,73.0,Convertible,3.5,9950000,9950000,675.0,5000,502.88,6000
 Mercedes-Benz EQC,1,Electric,0,0,5.0,Automatic,0.0,SUV,4.5,8247000,8247000,760.0,0,402.3,0
+MG Hector Plus,2,Diesel,1956,4,7.0,Manual,60.0,SUV,4.5,1615000,2075000,350.0,2500,167.67,3750
 Mercedes-Benz AMG C 43,1,Petrol,2996,6,5.0,Automatic,0.0,Coupe,4.5,11100000,11100000,520.0,5000,384.87,6100
 Lexus RX,5,Petrol,3456,6,5.0,Automatic,65.0,SUV,5.0,726000,726000,335.0,4600,258.81,6000
 Hyundai Xcent Prime,8,CNG,1197,4,5.0,Manual,65.0,Sedan,4.5,12000000,12400000,97.96,4200,65.39,5600
@@ -196,9 +197,13 @@ Porsche Cayenne Coupe,1,Petrol,3996,8,4.0,Automatic,0.0,SUV,3.5,18900000,1890000
 Porsche Cayenne Coupe,6,Petrol,3996,8,4.0,Automatic,0.0,SUV,3.5,391000,397000,850.0,4500,631.62,6000
 Honda City Hybrid,1,Petrol,1498,4,5.0,Automatic,40.0,Sedan,4.5,8150000,8150000,127.0,5000,96.55,6400
 Compass Trailhawk,1,Diesel,1998,4,5.0,Automatic,60.0,SUV,4.5,5450000,5690000,350.0,2500,170.0,3750
+Tesla Model X,15,Electric,,,5.0,Automatic,,SUV,4.5,5450000,5690000,350.0,2500,170.0,3750
 Jeep Meridian,78,Diesel,1956,4,7.0,Automatic,60.0,SUV,4.5,1615000,2075000,350.0,2500,167.67,3750
 Mercedes-Benz AMG A 45 S,35,Petrol,1991,4,5.0,Automatic,0.0,Hatchback,4.5,659000,999000,500.0,5250,415.71,6750
 BMW 3 Series Gran Limousine,3,Petrol,1998,4,5.0,Automatic,59.0,Sedan,4.5,1041000,1041000,400.0,4400,254.79,5000
 MG Hector Plus,2,Diesel,1956,4,7.0,Manual,60.0,SUV,4.5,1615000,2075000,350.0,2500,167.67,3750
 Audi RS Q8,9,Petrol,3998,8,5.0,Automatic,85.0,SUV,3.5,21700000,21700000,800.0,4500,591.39,6000
 Maruti Alto 800 tour,4,Petrol,796,3,5.0,Manual,35.0,Hatchback,4.5,391000,397000,69.0,3500,47.33,6000
+Aston Martin Valkyrie,2,Petrol,1998,4,,Automatic,40.0,Coupe,3.5,1041000,1041000,400.0,4400,254.79,5500
+Cupra Leaon,4,Diesel,796,3,5.0,Automatic,35.0,Hatchback,4.5,,397000,69.0,3500,47.33,6000
+Tata Nexon,568,Diesel,1497,4,5.0,Automatic,44.0,SUV,4.5,760000,1408000,260.0,2750,108.49,4000

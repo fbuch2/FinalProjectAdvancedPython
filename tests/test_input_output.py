@@ -5,6 +5,7 @@ Test if the input is correct
 import unittest
 from scripts.script import input_dataset
 
+
 class TestDataset(unittest.TestCase):
     """
     Class to test the input.
