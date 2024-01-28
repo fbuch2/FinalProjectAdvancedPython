@@ -23,11 +23,6 @@ def input_dataset(file):
 @click.command(short_help="Parser to import datset")
 @click.option("-f", "--filename", required=True, help="File to import")
 @click.option(
-    "-i",
-    "--info",
-    help="Enter Y to choose if you want to clear the dataset.",
-)
-@click.option(
     "-c",
     "--clean",
     help="Enter Y if you want to see more info about the dataset.",
@@ -38,11 +33,6 @@ def main(filename, clean, info):
     """
     dataset = input_dataset(filename)
     print(dataset.shape)
-    if info == "Y":
-        """Class to find more about the dataset"""
-        df = pd.read_csv(filename)
-        DatasetInfo(df).basic_info()
-        DatasetInfo(df).summary_statistics()
 
     if clean == "Y":
         dataset = CleaningDataset(dataset).drop_na()
