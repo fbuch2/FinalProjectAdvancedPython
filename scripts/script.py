@@ -4,7 +4,7 @@ import click
 
 sys.path.append("scripts")
 from cleaning_dataset import CleaningDataset
-from info_dataset import DatasetInfo
+
 
 
 """
