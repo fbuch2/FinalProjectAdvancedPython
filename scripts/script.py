@@ -6,6 +6,7 @@ sys.path.append("scripts")
 from cleaning_dataset import CleaningDataset
 
 
+
 """
 Script to get a dataset, and clean it and be able to do data analysis on it.
 """
@@ -24,19 +25,14 @@ def input_dataset(file):
 @click.option(
     "-c",
     "--clean",
-    required=True,
-    help="Enter Y or N to choose if you want to clear the dataset or not.",
+    help="Enter Y if you want to see more info about the dataset.",
 )
-def main(filename, clean):
+def main(filename, clean, info):
     """
     Main function
     """
     dataset = input_dataset(filename)
     print(dataset.shape)
-
-    if clean == "I":
-        """Dataset to find more info about the dataset"""
-        dataset = CleaningDataset(dataset).missing_values()
 
     if clean == "Y":
         dataset = CleaningDataset(dataset).drop_na()
