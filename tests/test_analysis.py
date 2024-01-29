@@ -25,7 +25,9 @@ class TestVisualizeNumericalRelationship(unittest.TestCase):
         cls.df = pd.DataFrame(data)
 
     def test_valid_visualization(self):
-        # Test if the scatter plot is created for valid numerical columns
+        """
+        Test if the scatter plot is created for valid numerical columns
+        """
         with patch("matplotlib.pyplot.show") as mock_show:
             Graph.visualize_numerical_relationship(
                 self.df, 'engine_displacement', 'max_power_bhp'
@@ -33,21 +35,27 @@ class TestVisualizeNumericalRelationship(unittest.TestCase):
             mock_show.assert_called_once()
 
     def test_invalid_column2(self):
-        # Test if ValueError is raised for an invalid column2
+        """
+        Test if ValueError is raised for an invalid column2
+        """
         with self.assertRaises(ValueError):
             Graph.visualize_numerical_relationship(
                 self.df, 'engine_displacement', 'test_column'
             )
 
     def test_invalid_column1(self):
-        # Test if ValueError is raised for an invalid column1
+        """
+        Test if ValueError is raised for an invalid column1
+        """
         with self.assertRaises(ValueError):
             Graph.visualize_numerical_relationship(
                 self.df, 'nonexistent_column', 'max_power_bhp'
             )
 
     def test_invalid_both_columns(self):
-        # Test if ValueError is raised for invalid column1 and column2
+        """
+        Test if ValueError is raised for invalid column1 and column2.
+        """
         with self.assertRaises(ValueError):
             Graph.visualize_numerical_relationship(
                 self.df, 'nonexistent_column1', 'nonexistent_column2'

@@ -30,12 +30,12 @@ def input_dataset(file):
 @click.option(
     "--type",
     "-t",
-    help="Enter an N if you want numerical or C if you want one one variable of each.",
+    help="Enter an N if you want numerical graph or C if you want one categorical.",
 )
 @click.option("--column1", "-1", help="Choose the first variable to analyze")
 @click.option("--column2", "-2", help="Chooose the second variable to analyze.")
 @click.option(
-    "--save_path", "-s", default="output/graph", help="Path to save the graphs"
+    "--save_path", "-s", help="Path to save the graphs"
 )
 def main(filename, clean, type, column1, column2, save_path):
     """
@@ -51,9 +51,15 @@ def main(filename, clean, type, column1, column2, save_path):
         dataset = CleaningDataset(dataset).drop_duplicates()
         print(dataset.shape)
 
-    if type == "N":
-        Graph.visualize_numerical_relationship(dataset, column1, column2)
-
+    try:
+        if type == "N":
+            Graph.visualize_numerical_relationship(dataset, column1, column2, save_path)
+        elif type == "C":
+            Graph.visualize_categorical_distribution(dataset, column1, save_path)
+    except ValueError as ve:
+        print(f"Error: {ve}")
+    except Exception as e:
+        print(f"An unexpected error occurred: {e}")
 
 if __name__ == "__main__":
     main()
