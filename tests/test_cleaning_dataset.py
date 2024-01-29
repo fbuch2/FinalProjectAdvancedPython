@@ -6,14 +6,14 @@ from scripts.cleaning_dataset import CleaningDataset
 Test if the cleaning dataset functions work correctly
 """
 
-class TestCleaningDataset(unittest.TestCase):
 
+class TestCleaningDataset(unittest.TestCase):
     def setUp(self):
         # Create a sample DataFrame for testing
         data = {
-            'col1': [1, 2, 3, 4, 5, None],
-            'col2': ['A', 'B', 'C', 'A', 'B', 'C'],
-            'col3': [1.1, 2.2, 3.3, 4.4, 5.5, 6.6]
+            "col1": [1, 2, 3, 4, 5, None],
+            "col2": ["A", "B", "C", "A", "B", "C"],
+            "col3": [1.1, 2.2, 3.3, 4.4, 5.5, 6.6],
         }
         self.df = pd.DataFrame(data)
         self.cleaner = CleaningDataset(self.df.copy())
@@ -30,5 +30,6 @@ class TestCleaningDataset(unittest.TestCase):
         self.assertIsNotNone(self.cleaner.df)
         self.assertIsInstance(self.cleaner.df, pd.DataFrame)
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     unittest.main()
