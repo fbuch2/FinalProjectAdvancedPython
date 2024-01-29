@@ -32,12 +32,8 @@ def input_dataset(file):
     "-t",
     help="Enter an N if you want numerical or C if you want one one variable of each.",
 )
-@click.option(
-    "--column1", "-1", help="Choose the first variable to analyze"
-)
-@click.option(
-    "--column2", "-2", help="Chooose the second variable to analyze."
-)
+@click.option("--column1", "-1", help="Choose the first variable to analyze")
+@click.option("--column2", "-2", help="Chooose the second variable to analyze.")
 @click.option(
     "--save_path", "-s", default="output/graph", help="Path to save the graphs"
 )
@@ -56,15 +52,7 @@ def main(filename, clean, type, column1, column2, save_path):
         print(dataset.shape)
 
     if type == "N":
-        if column1 in ['reviews_count' , 'engine_displacement', 'no_cylinder' , 'seating_capacity', 'fuel_tank_capacity' , 'rating' , 'starting_price' , 'ending_price' , 'max_torque_nm' , 'max_torque_rpm' , 'max_power_bhp' , 'max_power_rp']:
-            if column1 in ['reviews_count' , 'engine_displacement', 'no_cylinder' , 'seating_capacity', 'fuel_tank_capacity' , 'rating' , 'starting_price' , 'ending_price' , 'max_torque_nm' , 'max_torque_rpm' , 'max_power_bhp' , 'max_power_rp']:
-                Graph.visualize_numerical_relationship(dataset, column1, column2) 
-            else:
-                raise ValueError(f"{column2} is not a numerical column.")
-        else:
-            raise ValueError(f"{column1} is not a numerical column.")
-    
-
+        Graph.visualize_numerical_relationship(dataset, column1, column2)
 
 
 if __name__ == "__main__":
