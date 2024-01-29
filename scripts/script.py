@@ -1,3 +1,6 @@
+"""
+Script to get a dataset, and clean it and be able to do data analysis on it.
+"""
 import sys
 import pandas as pd
 import click
@@ -5,11 +8,6 @@ import click
 sys.path.append("scripts")
 from cleaning_dataset import CleaningDataset
 from analysis import Graph
-
-
-"""
-Script to get a dataset, and clean it and be able to do data analysis on it.
-"""
 
 
 def input_dataset(file):
@@ -34,9 +32,7 @@ def input_dataset(file):
 )
 @click.option("--column1", "-1", help="Choose the first variable to analyze")
 @click.option("--column2", "-2", help="Chooose the second variable to analyze.")
-@click.option(
-    "--save_path", "-s", help="Path to save the graphs"
-)
+@click.option("--save_path", "-s", help="Path to save the graphs")
 def main(filename, clean, type, column1, column2, save_path):
     """
     Main function
@@ -60,6 +56,7 @@ def main(filename, clean, type, column1, column2, save_path):
         print(f"Error: {ve}")
     except Exception as e:
         print(f"An unexpected error occurred: {e}")
+
 
 if __name__ == "__main__":
     main()
