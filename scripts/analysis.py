@@ -1,5 +1,6 @@
 import pandas as pd
 import matplotlib.pyplot as plt
+import os
 
 
 class Graph:
@@ -29,7 +30,9 @@ class Graph:
             plt.xlabel(column1)
             plt.ylabel(column2)
             if save_path:
-                plt.savefig(save_path)
+                if not os.path.exists(save_path):
+                    os.makedirs(save_path)
+                    plt.savefig(f'{save_path}/graph_numerical.png')
             else:
                 plt.show()
         else:
@@ -45,7 +48,9 @@ class Graph:
         plt.xlabel(column1)
         plt.ylabel('Count')
         if save_path:
-            plt.savefig(save_path)
+            if not os.path.exists(save_path):
+                os.makedirs(save_path)
+                plt.savefig(f'{save_path}/graph.png')
         else:
             plt.show()    
 
