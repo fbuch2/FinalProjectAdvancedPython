@@ -1,6 +1,5 @@
 import unittest
 import pandas as pd
-import matplotlib.pyplot as plt
 from unittest.mock import patch
 from scripts.analysis import Graph
 

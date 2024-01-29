@@ -1,6 +1,9 @@
-import matplotlib.pyplot as plt
+import matplotlib as plt
 import os
 
+"""
+Script to obtain graphs from the dataset.
+"""
 
 class Graph:
     def visualize_numerical_relationship(dataset, column1, column2, save_path=None):
