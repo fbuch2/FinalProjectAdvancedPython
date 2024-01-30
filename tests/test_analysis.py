@@ -7,6 +7,7 @@ from scripts.analysis import Graph
 Test the analysis of the dataset
 """
 
+
 class TestVisualizeNumericalRelationship(unittest.TestCase):
     @classmethod
     def setUpClass(cls):

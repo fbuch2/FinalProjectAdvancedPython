@@ -1,11 +1,16 @@
-import matplotlib.pyplot as plt
-import os
-
 """
 Script to obtain graphs from the dataset.
 """
 
+import os
+import matplotlib.pyplot as plt
+
+
 class Graph:
+    """
+    Class to run the two diferent graphs.
+    """
+
     def visualize_numerical_relationship(dataset, column1, column2, save_path=None):
         """
         Visualize the relationship between two numerical variables.
@@ -33,7 +38,7 @@ class Graph:
             if save_path:
                 if not os.path.exists(save_path):
                     os.makedirs(save_path)
-                plt.savefig(f"{save_path}/graph_numerical.png")
+                plt.savefig(f"{save_path}/graph.png")
             else:
                 plt.show()
         else:
@@ -43,7 +48,7 @@ class Graph:
         """
         Visualize the distribution of a categorical variable.
         """
-        if column1 not in dataset.columns:
+        if column1 not in dataset:
             raise ValueError(f"Column '{column1}' does not exist in the dataset.")
 
         plt.figure(figsize=(8, 6))
