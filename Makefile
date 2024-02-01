@@ -15,3 +15,6 @@ flake8 scripts:
 
 lint:
 	pylint *
+
+pylint scripts:
+	pylint scripts -
