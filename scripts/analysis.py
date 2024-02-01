@@ -11,7 +11,7 @@ class Graph:
     Class to run the two diferent graphs.
     """
 
-    def visualize_numerical_relationship(dataset, column1, column2, save_path=None):
+    def visualize_scatter(dataset, column1, column2, save_path=None):
         """
         Visualize the relationship between two numerical variables.
         """
@@ -44,7 +44,7 @@ class Graph:
         else:
             raise ValueError(f"Both {column1} and {column2} must be numerical columns.")
 
-    def visualize_categorical_distribution(dataset, column1, save_path=None):
+    def visualize_bar(dataset, column1, save_path=None):
         """
         Visualize the distribution of a categorical variable.
         """

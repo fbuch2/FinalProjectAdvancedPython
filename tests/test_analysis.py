@@ -8,7 +8,7 @@ Test the analysis of the dataset
 """
 
 
-class TestVisualizeNumericalRelationship(unittest.TestCase):
+class TestVisualizeScatter(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         data = {
@@ -32,7 +32,7 @@ class TestVisualizeNumericalRelationship(unittest.TestCase):
         Test if the scatter plot is created for valid numerical columns
         """
         with patch("matplotlib.pyplot.show") as mock_show:
-            Graph.visualize_numerical_relationship(
+            Graph.visualize_scatter(
                 self.df, "engine_displacement", "max_power_bhp"
             )
             mock_show.assert_called_once()
@@ -42,7 +42,7 @@ class TestVisualizeNumericalRelationship(unittest.TestCase):
         Test if ValueError is raised for an invalid column2
         """
         with self.assertRaises(ValueError):
-            Graph.visualize_numerical_relationship(
+            Graph.visualize_scatter(
                 self.df, "engine_displacement", "test_column"
             )
 
@@ -51,7 +51,7 @@ class TestVisualizeNumericalRelationship(unittest.TestCase):
         Test if ValueError is raised for an invalid column1
         """
         with self.assertRaises(ValueError):
-            Graph.visualize_numerical_relationship(
+            Graph.visualize_scatter(
                 self.df, "nonexistent_column", "max_power_bhp"
             )
 
@@ -60,12 +60,12 @@ class TestVisualizeNumericalRelationship(unittest.TestCase):
         Test if ValueError is raised for invalid column1 and column2.
         """
         with self.assertRaises(ValueError):
-            Graph.visualize_numerical_relationship(
+            Graph.visualize_scatter(
                 self.df, "nonexistent_column1", "nonexistent_column2"
             )
 
 
-class TestVisualizeCategorical(unittest.TestCase):
+class TestVisualizeBar(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         data = {"category_column": ["A", "B", "A", "C", "B", "A", "C", "C", "B", "A"]}
@@ -73,19 +73,19 @@ class TestVisualizeCategorical(unittest.TestCase):
 
     def test_valid_visualization(self):
         with patch("matplotlib.pyplot.show") as mock_show:
-            Graph.visualize_categorical_distribution(self.df, "category_column", None)
+            Graph.visualize_bar(self.df, "category_column", None)
             mock_show.assert_called_once()
 
     def test_valid_saving_plot_with_directory(self):
         with patch("matplotlib.pyplot.savefig") as mock_savefig:
-            Graph.visualize_categorical_distribution(
+            Graph.visualize_bar(
                 self.df, "category_column", "path/to/directory"
             )
             mock_savefig.assert_called_once_with("path/to/directory/graph.png")
 
     def test_invalid_column(self):
         with self.assertRaises(ValueError) as context:
-            Graph.visualize_categorical_distribution(
+            Graph.visualize_bar(
                 self.df, "nonexistent_column", None
             )
         self.assertIn("nonexistent_column", str(context.exception))

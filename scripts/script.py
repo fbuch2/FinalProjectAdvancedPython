@@ -26,9 +26,9 @@ def input_dataset(file):
     help="Enter Y if you want to clean the dataset.",
 )
 @click.option(
-    "--type",
     "-t",
-    help="Enter an N if you want numerical graph or C if you want one categorical.",
+    "--type",
+    help="Enter an S if you want a scatter plot or B if you want a bar chart.",
 )
 @click.option("--column1", "-1", help="Choose the first variable to analyze")
 @click.option("--column2", "-2", help="Chooose the second variable to analyze.")
@@ -48,10 +48,10 @@ def main(filename, clean, type, column1, column2, save_path):
         print(dataset.shape)
 
     try:
-        if type == "N":
-            Graph.visualize_numerical_relationship(dataset, column1, column2, save_path)
-        elif type == "C":
-            Graph.visualize_categorical_distribution(dataset, column1, save_path)
+        if type == "S":
+            Graph.visualize_scatter(dataset, column1, column2, save_path)
+        elif type == "B":
+            Graph.visualize_bar(dataset, column1, save_path)
     except ValueError as ve:
         print(f"Error: {ve}")
     except Exception as e:

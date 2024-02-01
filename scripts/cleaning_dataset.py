@@ -1,3 +1,7 @@
+"""
+Script to clean the dataset if chosen to do so.
+"""
+
 class CleaningDataset:
     """Class to clean the dataset"""
 
